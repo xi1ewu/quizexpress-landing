@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>QuizExpress — Join Now!</title>
+<meta name="description" content="Your ultimate trivia hub. Play solo or challenge groups in Culture, Lifestyle, and Sports anytime." />
+<meta name="theme-color" content="#0B7A3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#FBF2DE',
+          creamDark: '#F3E4C4',
+          brandGreen: '#0B7A3E',
+          brandGreenDark: '#075C2E',
+          brandGreenLight: '#3FAE63',
+          brandYellow: '#FFC738',
+          brandYellowDark: '#F0A500',
+          brandRed: '#E8483C',
+        },
+        fontFamily: {
+          display: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        keyframes: {
+          floatSlow: {
+            '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+            '50%': { transform: 'translate(6px, -10px) rotate(6deg)' },
+          },
+          floatSlower: {
+            '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+            '50%': { transform: 'translate(-8px, 8px) rotate(-5deg)' },
+          },
+          pulseGlow: {
+            '0%, 100%': { boxShadow: '0 0 0 0 rgba(11,122,62,0.55), 0 8px 20px rgba(11,122,62,0.35)' },
+            '50%': { boxShadow: '0 0 0 14px rgba(11,122,62,0), 0 8px 20px rgba(11,122,62,0.35)' },
+          },
+          popIn: {
+            '0%': { opacity: '0', transform: 'translateY(10px) scale(0.96)' },
+            '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+          },
+        },
+        animation: {
+          'float-slow': 'floatSlow 7s ease-in-out infinite',
+          'float-slower': 'floatSlower 9s ease-in-out infinite',
+          'pulse-glow': 'pulseGlow 2.2s ease-in-out infinite',
+          'pop-in': 'popIn 0.5s ease-out both',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html, body { overflow-x: hidden; }
+  body { font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif; }
+  .safe-bottom { padding-bottom: max(1.25rem, env(safe-area-inset-bottom)); }
+</style>
+</head>
+<body class="bg-cream text-brandGreenDark antialiased">
+
+  <div class="relative min-h-screen w-full overflow-hidden">
+
+    <!-- Decorative abstract blobs (inline SVG, no external images) -->
+    <svg class="pointer-events-none absolute -top-10 -left-14 w-44 h-44 opacity-70 animate-float-slow" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#FFC738" d="M45.3,-58.5C58.6,-49.7,69.3,-35.9,73.6,-20.3C77.9,-4.7,75.8,12.7,68.2,27.4C60.6,42.1,47.5,54.1,32.4,61.6C17.4,69.1,0.4,72.1,-16.4,69.8C-33.2,67.5,-49.9,59.9,-60.8,47.1C-71.7,34.3,-76.8,16.2,-75.6,-1.2C-74.3,-18.5,-66.7,-35.1,-54.5,-44.2C-42.3,-53.3,-25.5,-54.9,-9.1,-52.6C7.3,-50.3,32,-67.3,45.3,-58.5Z" transform="translate(100 100)" />
+    </svg>
+
+    <svg class="pointer-events-none absolute -top-6 -right-16 w-56 h-56 opacity-60 animate-float-slower" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#0B7A3E" d="M42.6,-54.6C54.1,-46.5,61,-31.9,64.4,-16.4C67.8,-0.9,67.7,15.5,60.6,28.6C53.5,41.7,39.4,51.5,24.1,58.1C8.8,64.7,-7.7,68.1,-23.1,64.5C-38.5,60.9,-52.8,50.3,-61.2,36.1C-69.6,21.9,-72.1,4.1,-68.3,-11.9C-64.5,-27.9,-54.4,-42.1,-41.4,-50.3C-28.4,-58.5,-14.2,-60.7,1.3,-62.4C16.8,-64.1,31.1,-62.7,42.6,-54.6Z" transform="translate(100 100)" />
+    </svg>
+
+    <svg class="pointer-events-none absolute top-[38%] -left-16 w-40 h-40 opacity-30 animate-float-slow" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#E8483C" d="M39.7,-51.3C50.9,-42.8,59,-30.1,62.8,-15.9C66.6,-1.7,66.1,14,59.9,27.1C53.7,40.2,41.8,50.7,28,56.6C14.2,62.5,-1.5,63.8,-16.8,60.4C-32.1,57,-47,48.9,-56.4,36.3C-65.8,23.7,-69.7,6.6,-67,-9.3C-64.3,-25.2,-55,-39.9,-42.2,-48.3C-29.4,-56.7,-14.7,-58.8,0.4,-59.3C15.5,-59.8,28.5,-59.8,39.7,-51.3Z" transform="translate(100 100)" />
+    </svg>
+
+    <svg class="pointer-events-none absolute -bottom-10 -right-10 w-48 h-48 opacity-50 animate-float-slower" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#FFC738" d="M44.9,-58.3C57.9,-49.6,67.7,-35.7,71.4,-20.2C75.1,-4.7,72.7,12.4,65.1,26.8C57.5,41.2,44.7,52.9,30,60.1C15.3,67.3,-1.3,70,-17.7,66.8C-34.1,63.6,-50.3,54.5,-60.6,41C-70.9,27.5,-75.3,9.6,-73,-7.1C-70.7,-23.8,-61.7,-39.3,-48.8,-48.1C-35.9,-56.9,-18,-59,-0.7,-58.1C16.6,-57.2,31.9,-67,44.9,-58.3Z" transform="translate(100 100)" />
+    </svg>
+
+    <!-- Page container: mobile-first, capped for larger screens -->
+    <main class="relative mx-auto flex min-h-screen w-full max-w-[480px] flex-col px-5 pt-6">
+
+      <!-- Header / brand -->
+      <header class="flex items-center justify-between animate-pop-in">
+        <div class="flex items-center gap-2">
+          <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-brandGreen shadow-sm">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.5 9H21.5L15.8 13.2 18 20.2 12 16 6 20.2 8.2 13.2 2.5 9H9.5L12 2Z" fill="#FFC738"/></svg>
+          </div>
+          <span class="font-display text-lg font-800 tracking-tight text-brandGreenDark">Quiz<span class="text-brandGreen">Express</span></span>
+        </div>
+        <span class="rounded-full bg-white/70 px-3 py-1 text-[11px] font-600 text-brandGreenDark shadow-sm ring-1 ring-black/5">Safaricom VAS</span>
+      </header>
+
+      <!-- Hero: themes -->
+      <section class="mt-6 animate-pop-in [animation-delay:80ms]">
+        <p class="text-center text-xs font-700 uppercase tracking-[0.2em] text-brandRed">Trivia. Reimagined.</p>
+
+        <div class="mt-4 flex items-center justify-center gap-3">
+          <!-- Culture badge -->
+          <div class="flex w-20 flex-col items-center gap-1.5">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brandRed shadow-md shadow-brandRed/30 ring-4 ring-white">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FBF2DE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/><path d="M8 10.5c1.5-2 6.5-2 8 0"/><path d="M8.5 15c1-1 6-1 7 0"/>
+              </svg>
+            </div>
+            <span class="text-[11px] font-700 text-brandGreenDark">Culture</span>
+          </div>
+          <!-- Lifestyle badge -->
+          <div class="flex w-20 flex-col items-center gap-1.5">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brandGreen shadow-md shadow-brandGreen/30 ring-4 ring-white">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FBF2DE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21s-7-4.35-9.5-9C.8 8.1 3 4.5 6.7 4.5c2 0 3.6 1.1 5.3 3 1.7-1.9 3.3-3 5.3-3 3.7 0 5.9 3.6 4.2 7.5C19 16.65 12 21 12 21Z"/>
+              </svg>
+            </div>
+            <span class="text-[11px] font-700 text-brandGreenDark">Lifestyle</span>
+          </div>
+          <!-- Sports badge -->
+          <div class="flex w-20 flex-col items-center gap-1.5">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brandYellow shadow-md shadow-brandYellow/40 ring-4 ring-white">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#075C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 21h8"/><path d="M12 17v4"/><path d="M6 4h12v3a6 6 0 0 1-12 0V4Z"/><path d="M6 5H4a2 2 0 0 0 0 4h2"/><path d="M18 5h2a2 2 0 0 1 0 4h-2"/>
+              </svg>
+            </div>
+            <span class="text-[11px] font-700 text-brandGreenDark">Sports</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Headline + value proposition -->
+      <section class="mt-7 text-center animate-pop-in [animation-delay:140ms]">
+        <h1 class="font-display text-[28px] font-900 leading-tight text-brandGreenDark sm:text-3xl">
+          Join <span class="text-brandGreen">QuizExpress</span> Now!
+        </h1>
+        <p class="mt-3 text-[15px] leading-relaxed text-brandGreenDark/80">
+          Your ultimate trivia hub. Play solo or challenge groups in Culture, Lifestyle, and Sports anytime, absolute fun guaranteed!
+        </p>
+      </section>
+
+      <!-- Feature highlights -->
+      <section class="mt-5 grid grid-cols-2 gap-2.5 animate-pop-in [animation-delay:200ms]">
+        <div class="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2.5 ring-1 ring-black/5">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7A3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+          <span class="text-[12.5px] font-600 text-brandGreenDark">Solo Play</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2.5 ring-1 ring-black/5">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7A3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><circle cx="8" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2.5 20c0-3.4 2.6-5.3 5.5-5.3s5.5 1.9 5.5 5.3"/><path d="M14.5 20c.2-2.6 1.9-4.3 4-4.3 2 0 3.6 1.4 4 3.6"/></svg>
+          <span class="text-[12.5px] font-600 text-brandGreenDark">Group Play</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2.5 ring-1 ring-black/5">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7A3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+          <span class="text-[12.5px] font-600 text-brandGreenDark">Fresh Daily</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2.5 ring-1 ring-black/5">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7A3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M12 2 14.5 9H21.5L15.8 13.2 18 20.2 12 16 6 20.2 8.2 13.2 2.5 9H9.5L12 2Z"/></svg>
+          <span class="text-[12.5px] font-600 text-brandGreenDark">3 Themes</span>
+        </div>
+      </section>
+
+      <!-- Pricing (compliance-critical) -->
+      <section class="mt-5 animate-pop-in [animation-delay:260ms]">
+        <div class="rounded-2xl border-2 border-dashed border-brandGreen/40 bg-white/80 px-4 py-3 text-center">
+          <p class="text-[13.5px] font-700 text-brandGreenDark">
+            Ksh 10.00 to subscribe and Ksh 10.00/day to renew service.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="mt-6 animate-pop-in [animation-delay:320ms]">
+        <button
+          id="cta-btn"
+          type="button"
+          class="group flex w-full items-center justify-center gap-2 rounded-full bg-brandGreen py-4 text-[17px] font-800 text-white shadow-lg shadow-brandGreen/30 transition active:scale-[0.97] animate-pulse-glow"
+        >
+          Get Started
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition group-active:translate-x-0.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p id="redirect-note" class="mt-2 hidden text-center text-[12px] font-600 text-brandGreenDark/70">Redirecting you to confirm your subscription…</p>
+      </section>
+
+      <!-- Footer / legal -->
+      <footer class="safe-bottom mt-auto pt-8 pb-4 text-center">
+        <div class="mx-auto h-px w-16 bg-brandGreenDark/15"></div>
+        <p class="mt-4 text-[11.5px] leading-relaxed text-brandGreenDark/60">
+          Ksh 10.00 to subscribe and Ksh 10.00/day to renew service. Available on the Safaricom network.
+          Cancel anytime by sending <span class="font-700 text-brandGreenDark/80">'STOP QUIZ'</span> to <span class="font-700 text-brandGreenDark/80">27301</span>.
+        </p>
+        <p class="mt-2 text-[11px] text-brandGreenDark/40">© 2026 QuizExpress. All rights reserved.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    /* ------------------------------------------------------------------
+     * CONFIGURATION — toggle hands-free auto-redirect experiment here.
+     * ------------------------------------------------------------------ */
+    const CONFIG = {
+      AUTO_REDIRECT_ENABLED: false,   // set true to auto-redirect after AUTO_REDIRECT_DELAY_MS
+      AUTO_REDIRECT_DELAY_MS: 1800,   // 1.5–2s dwell before hands-free redirect
+      TARGET_BASE_URL: 'https://dsdp-cg.safaricom.com/consent-gateway/001039238805?clientTxnId=',
+      // Extra query params forwarded to the gateway if present on this page's URL
+      PASSTHROUGH_PARAMS: ['msisdn', 'subscriberId', 'utm_source', 'utm_medium', 'utm_campaign'],
+    };
+
+    let hasRedirected = false;
+
+    function generateTxnId() {
+      return 'web-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+    }
+
+    function buildRedirectUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const clientTxnId = params.get('clientTxnId') || generateTxnId();
+
+      let url = CONFIG.TARGET_BASE_URL + encodeURIComponent(clientTxnId);
+
+      const extra = new URLSearchParams();
+      CONFIG.PASSTHROUGH_PARAMS.forEach((key) => {
+        const value = params.get(key);
+        if (value) extra.set(key, value);
+      });
+
+      const extraStr = extra.toString();
+      return extraStr ? `${url}&${extraStr}` : url;
+    }
+
+    function goToConsentGateway() {
+      if (hasRedirected) return;
+      hasRedirected = true;
+      window.location.href = buildRedirectUrl();
+    }
+
+    document.getElementById('cta-btn').addEventListener('click', goToConsentGateway);
+
+    // Vanilla-JS equivalent of a useEffect-on-mount auto-redirect (this page
+    // is plain HTML, not React). Runs once after DOM is ready, respects the
+    // CONFIG toggle above, and is safely skipped when disabled.
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!CONFIG.AUTO_REDIRECT_ENABLED) return;
+      document.getElementById('redirect-note').classList.remove('hidden');
+      setTimeout(goToConsentGateway, CONFIG.AUTO_REDIRECT_DELAY_MS);
+    });
+  </script>
+</body>
+</html>
