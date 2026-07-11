@@ -44,17 +44,12 @@
             '0%': { opacity: '0', transform: 'translateY(10px) scale(0.96)' },
             '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
           },
-          mascotBob: {
-            '0%, 100%': { transform: 'translateY(0) rotate(-4deg)' },
-            '50%': { transform: 'translateY(-8px) rotate(4deg)' },
-          },
         },
         animation: {
           'float-slow': 'floatSlow 7s ease-in-out infinite',
           'float-slower': 'floatSlower 9s ease-in-out infinite',
           'pulse-glow': 'pulseGlow 2.2s ease-in-out infinite',
           'pop-in': 'popIn 0.5s ease-out both',
-          'mascot-bob': 'mascotBob 3s ease-in-out infinite',
         },
       },
     },
@@ -100,31 +95,6 @@
         </div>
         <span class="rounded-full bg-white/70 px-3 py-1 text-[11px] font-600 text-brandGreenDark shadow-sm ring-1 ring-black/5">Safaricom VAS</span>
       </header>
-
-      <!-- Mascot: Quizzy, peeking in to say hi -->
-      <div class="pointer-events-none absolute right-1 top-14 w-[92px] rotate-6 animate-mascot-bob">
-        <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-          <path d="M172 30 L175 38 L183 41 L175 44 L172 52 L169 44 L161 41 L169 38 Z" fill="#FFC738"/>
-          <circle cx="20" cy="55" r="5" fill="#E8483C" opacity="0.8"/>
-          <rect x="60" y="205" width="24" height="16" rx="8" fill="#075C2E"/>
-          <rect x="116" y="205" width="24" height="16" rx="8" fill="#075C2E"/>
-          <path d="M60 130 Q30 140 28 168" stroke="#0B7A3E" stroke-width="20" stroke-linecap="round" fill="none"/>
-          <circle cx="27" cy="170" r="12" fill="#0B7A3E"/>
-          <path d="M140 125 Q168 100 168 68" stroke="#0B7A3E" stroke-width="20" stroke-linecap="round" fill="none"/>
-          <circle cx="168" cy="65" r="13" fill="#0B7A3E"/>
-          <rect x="52" y="35" width="96" height="175" rx="48" fill="#0B7A3E"/>
-          <circle cx="70" cy="112" r="9" fill="#E8483C" opacity="0.45"/>
-          <circle cx="130" cy="112" r="9" fill="#E8483C" opacity="0.45"/>
-          <circle cx="78" cy="95" r="14" fill="#FBF2DE"/>
-          <circle cx="122" cy="95" r="14" fill="#FBF2DE"/>
-          <circle cx="81" cy="97" r="6.5" fill="#075C2E"/>
-          <circle cx="125" cy="97" r="6.5" fill="#075C2E"/>
-          <circle cx="83" cy="94" r="2" fill="#FBF2DE"/>
-          <circle cx="127" cy="94" r="2" fill="#FBF2DE"/>
-          <path d="M78 120 Q100 138 122 120" stroke="#FBF2DE" stroke-width="7" stroke-linecap="round" fill="none"/>
-          <path d="M100 150 L104 160 L114 164 L104 168 L100 178 L96 168 L86 164 L96 160 Z" fill="#FFC738" stroke="#F0A500" stroke-width="1.5"/>
-        </svg>
-      </div>
 
       <!-- Hero: play with family & earn -->
       <section class="mt-6 animate-pop-in [animation-delay:80ms]">

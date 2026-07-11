@@ -42,17 +42,12 @@
             '0%': { opacity: '0', transform: 'translateY(10px) scale(0.94)' },
             '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
           },
-          mascotBob: {
-            '0%, 100%': { transform: 'translateY(0) rotate(8deg)' },
-            '50%': { transform: 'translateY(-7px) rotate(14deg)' },
-          },
         },
         animation: {
           'float-slow': 'floatSlow 7s ease-in-out infinite',
           'float-slower': 'floatSlower 9s ease-in-out infinite',
           'press-pulse': 'pressPulse 1.6s ease-in-out infinite',
           'pop-in': 'popIn 0.45s ease-out both',
-          'mascot-bob': 'mascotBob 3s ease-in-out infinite',
         },
       },
     },
@@ -103,29 +98,6 @@
         <div class="relative rounded-[1.75rem] border-[3px] border-ink bg-white px-4 pb-4 pt-5 hard-shadow">
           <span class="absolute -top-3 left-5 -rotate-2 rounded-full border-[2px] border-ink bg-brandRed px-3 py-1 text-[10px] font-800 uppercase tracking-[0.12em] text-white">Family Trivia Pass</span>
 
-          <!-- Mascot: Quizzy the sticker -->
-          <div class="pointer-events-none absolute -right-4 -top-9 w-[76px] animate-mascot-bob">
-            <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-              <path d="M172 30 L175 38 L183 41 L175 44 L172 52 L169 44 L161 41 L169 38 Z" fill="#FFC738" stroke="#1A1A1A" stroke-width="2"/>
-              <rect x="60" y="205" width="24" height="16" rx="8" fill="#075C2E" stroke="#1A1A1A" stroke-width="2.5"/>
-              <rect x="116" y="205" width="24" height="16" rx="8" fill="#075C2E" stroke="#1A1A1A" stroke-width="2.5"/>
-              <path d="M60 130 Q30 140 28 168" stroke="#0B7A3E" stroke-width="20" stroke-linecap="round" fill="none"/>
-              <circle cx="27" cy="170" r="12" fill="#0B7A3E" stroke="#1A1A1A" stroke-width="2.5"/>
-              <path d="M140 125 Q168 100 168 68" stroke="#0B7A3E" stroke-width="20" stroke-linecap="round" fill="none"/>
-              <circle cx="168" cy="65" r="13" fill="#0B7A3E" stroke="#1A1A1A" stroke-width="2.5"/>
-              <rect x="52" y="35" width="96" height="175" rx="48" fill="#0B7A3E" stroke="#1A1A1A" stroke-width="3.5"/>
-              <circle cx="70" cy="112" r="9" fill="#E8483C" opacity="0.45"/>
-              <circle cx="130" cy="112" r="9" fill="#E8483C" opacity="0.45"/>
-              <circle cx="78" cy="95" r="14" fill="#FBF2DE" stroke="#1A1A1A" stroke-width="2"/>
-              <circle cx="122" cy="95" r="14" fill="#FBF2DE" stroke="#1A1A1A" stroke-width="2"/>
-              <circle cx="81" cy="97" r="6.5" fill="#075C2E"/>
-              <circle cx="125" cy="97" r="6.5" fill="#075C2E"/>
-              <circle cx="83" cy="94" r="2" fill="#FBF2DE"/>
-              <circle cx="127" cy="94" r="2" fill="#FBF2DE"/>
-              <path d="M78 120 Q100 138 122 120" stroke="#FBF2DE" stroke-width="7" stroke-linecap="round" fill="none"/>
-              <path d="M100 150 L104 160 L114 164 L104 168 L100 178 L96 168 L86 164 L96 160 Z" fill="#FFC738" stroke="#1A1A1A" stroke-width="2"/>
-            </svg>
-          </div>
 
           <div class="mx-auto w-[190px] pt-3">
             <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
