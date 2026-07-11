@@ -47,6 +47,10 @@
             '0%': { opacity: '0', transform: 'translateY(14px) scale(0.96)' },
             '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
           },
+          mascotBob: {
+            '0%, 100%': { transform: 'translateY(0) rotate(-6deg)' },
+            '50%': { transform: 'translateY(-9px) rotate(2deg)' },
+          },
         },
         animation: {
           'float-slow': 'floatSlow 7s ease-in-out infinite',
@@ -54,6 +58,7 @@
           'spin-slow': 'spinSlow 22s linear infinite',
           'glow': 'glow 2.6s ease-in-out infinite',
           'pop-in': 'popIn 0.55s cubic-bezier(.2,.7,.3,1) both',
+          'mascot-bob': 'mascotBob 3.4s ease-in-out infinite',
         },
       },
     },
@@ -106,6 +111,39 @@
 
       <!-- Hero: play with family & earn, in a glass frame -->
       <section class="relative mx-auto mt-8 animate-pop-in [animation-delay:80ms]">
+        <!-- Mascot: Quizzy, floating beside the glass card -->
+        <div class="pointer-events-none absolute -right-2 -top-8 z-10 w-[78px] animate-mascot-bob drop-shadow-lg">
+          <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+            <path d="M172 30 L175 38 L183 41 L175 44 L172 52 L169 44 L161 41 L169 38 Z" fill="#FFC738"/>
+            <circle cx="20" cy="55" r="5" fill="#E8483C" opacity="0.8"/>
+            <rect x="60" y="205" width="24" height="16" rx="8" fill="url(#gMascotShade)"/>
+            <rect x="116" y="205" width="24" height="16" rx="8" fill="url(#gMascotShade)"/>
+            <path d="M60 130 Q30 140 28 168" stroke="url(#gMascotBody)" stroke-width="20" stroke-linecap="round" fill="none"/>
+            <circle cx="27" cy="170" r="12" fill="url(#gMascotBody)"/>
+            <path d="M140 125 Q168 100 168 68" stroke="url(#gMascotBody)" stroke-width="20" stroke-linecap="round" fill="none"/>
+            <circle cx="168" cy="65" r="13" fill="url(#gMascotBody)"/>
+            <rect x="52" y="35" width="96" height="175" rx="48" fill="url(#gMascotBody)"/>
+            <circle cx="70" cy="112" r="9" fill="#E8483C" opacity="0.4"/>
+            <circle cx="130" cy="112" r="9" fill="#E8483C" opacity="0.4"/>
+            <circle cx="78" cy="95" r="14" fill="#FBF2DE"/>
+            <circle cx="122" cy="95" r="14" fill="#FBF2DE"/>
+            <circle cx="81" cy="97" r="6.5" fill="#075C2E"/>
+            <circle cx="125" cy="97" r="6.5" fill="#075C2E"/>
+            <circle cx="83" cy="94" r="2" fill="#FBF2DE"/>
+            <circle cx="127" cy="94" r="2" fill="#FBF2DE"/>
+            <path d="M78 120 Q100 138 122 120" stroke="#FBF2DE" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path d="M100 150 L104 160 L114 164 L104 168 L100 178 L96 168 L86 164 L96 160 Z" fill="#FFC738"/>
+            <defs>
+              <linearGradient id="gMascotBody" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3FAE63"/><stop offset="100%" stop-color="#075C2E"/>
+              </linearGradient>
+              <linearGradient id="gMascotShade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3FAE63"/><stop offset="100%" stop-color="#075C2E"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
         <div class="glass-strong mx-auto w-[220px] rounded-[2rem] px-4 py-5 shadow-xl shadow-brandGreen/15 ring-1 ring-white/70">
           <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
             <circle cx="38" cy="34" r="9" fill="#FFC738"/>
