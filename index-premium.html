@@ -94,27 +94,41 @@
 
     <main class="relative mx-auto flex min-h-screen w-full max-w-[480px] flex-col px-5 pt-6">
 
-      <!-- Full-bleed photo hero -->
-      <div class="relative -mx-5 -mt-6 h-[400px] overflow-hidden rounded-b-[2.5rem] shadow-xl shadow-brandGreen/20 animate-pop-in">
-        <img src="assets/photos/play-friends.jpg" alt="Friends cheering while watching a football match together" class="absolute inset-0 h-full w-full object-cover object-center" />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/10 to-brandGreenDark/95"></div>
-
-        <div class="relative flex h-full flex-col px-5 pt-6 pb-6">
-          <header class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-white/25 backdrop-blur-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.5 9H21.5L15.8 13.2 18 20.2 12 16 6 20.2 8.2 13.2 2.5 9H9.5L12 2Z" fill="#FFC738"/></svg>
-              </div>
-              <span class="font-display text-[17px] font-800 tracking-tight text-white drop-shadow">Quiz<span class="text-brandYellow font-900">Express</span></span>
+      <!-- Hero: wordmark + 3 play-mode photos -->
+      <div class="relative pt-6 pb-2 animate-pop-in">
+        <header class="relative flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-brandGreen to-brandGreenDark shadow-lg shadow-brandGreen/30">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.5 9H21.5L15.8 13.2 18 20.2 12 16 6 20.2 8.2 13.2 2.5 9H9.5L12 2Z" fill="#FFC738"/></svg>
             </div>
-            <span class="rounded-full bg-white/15 px-3 py-1.5 text-[11px] font-600 text-white/90 ring-1 ring-white/25 backdrop-blur-sm">Safaricom VAS</span>
-          </header>
+            <span class="font-display text-[17px] font-800 tracking-tight text-brandGreenDark">Quiz<span class="grad-text font-900">Express</span></span>
+          </div>
+          <span class="rounded-full bg-brandGreenDark/5 px-3 py-1.5 text-[11px] font-600 text-brandGreenDark/70 ring-1 ring-brandGreenDark/10">Safaricom VAS</span>
+        </header>
 
-          <div class="mt-auto">
-            <p class="text-[10px] font-700 uppercase tracking-[0.28em] text-brandYellow">Trivia Quiz</p>
-            <h1 class="mt-1.5 font-display text-[26px] font-900 leading-tight text-white drop-shadow-lg">
-              Play <span class="text-brandYellow">Solo</span>, Family or Friends
-            </h1>
+        <div class="mt-6 text-center">
+          <p class="text-[10px] font-700 uppercase tracking-[0.28em] text-brandYellowDark">Trivia Quiz</p>
+          <h1 class="mt-1.5 font-display text-[22px] font-900 leading-tight text-brandGreenDark">
+            Play <span class="text-brandYellowDark">Solo</span>, <span class="text-brandGreen">Family</span> or <span class="text-brandRed">Friends</span>
+          </h1>
+        </div>
+
+        <!-- Photos: fanned overlapping collage -->
+        <div class="relative mx-auto mt-5 flex h-[210px] max-w-[300px] items-center justify-center">
+          <div class="absolute left-1/2 top-1/2 z-10 w-[112px] -translate-x-[112%] -translate-y-1/2 -rotate-[9deg] transition active:scale-95">
+            <div class="overflow-hidden rounded-[1.25rem] bg-white p-1 shadow-xl ring-1 ring-white/70">
+              <img src="assets/photos/play-solo.jpg" alt="A woman relaxing on the couch with headphones and a phone" class="aspect-[3/4] w-full rounded-2xl object-cover" loading="lazy" />
+            </div>
+          </div>
+          <div class="absolute left-1/2 top-1/2 z-30 w-[132px] -translate-x-1/2 -translate-y-1/2 transition active:scale-95">
+            <div class="overflow-hidden rounded-[1.25rem] bg-white p-1 shadow-2xl ring-1 ring-white/70">
+              <img src="assets/photos/play-family.jpg" alt="A family watching a laptop together on the sofa" class="aspect-[3/4] w-full rounded-2xl object-cover" loading="lazy" />
+            </div>
+          </div>
+          <div class="absolute left-1/2 top-1/2 z-10 w-[112px] translate-x-[12%] -translate-y-1/2 rotate-[9deg] transition active:scale-95">
+            <div class="overflow-hidden rounded-[1.25rem] bg-white p-1 shadow-xl ring-1 ring-white/70">
+              <img src="assets/photos/play-friends.jpg" alt="Friends cheering while watching a football match together" class="aspect-[3/4] w-full rounded-2xl object-cover" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
