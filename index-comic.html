@@ -82,41 +82,27 @@
 
     <main class="relative mx-auto flex min-h-screen w-full max-w-[480px] flex-col px-5 pt-6">
 
-      <!-- Hero: wordmark + 3 play-mode photos -->
-      <div class="relative pt-6 pb-2 animate-pop-in">
-        <header class="relative flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl border-[3px] border-ink bg-brandGreen hard-shadow-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.5 9H21.5L15.8 13.2 18 20.2 12 16 6 20.2 8.2 13.2 2.5 9H9.5L12 2Z" fill="#FFC738" stroke="#1A1A1A" stroke-width="1"/></svg>
-            </div>
-            <span class="font-display text-[17px] font-900 tracking-tight text-ink">Quiz<span class="text-brandGreen">Express</span></span>
-          </div>
-          <span class="rotate-3 rounded-full border-[2px] border-ink bg-white px-3 py-1 text-[11px] font-700 text-ink hard-shadow-sm">Safaricom VAS</span>
-        </header>
+      <!-- Full-bleed photo hero -->
+      <div class="relative -mx-5 -mt-6 h-[400px] overflow-hidden border-b-[4px] border-ink animate-pop-in">
+        <img src="assets/photos/play-family.jpg" alt="A family watching a laptop together on the sofa" class="absolute inset-0 h-full w-full object-cover object-center" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/10 to-ink/90"></div>
 
-        <div class="mt-6 text-center">
-          <p class="text-[10px] font-800 uppercase tracking-[0.28em] text-brandGreen">Family Trivia Pass</p>
-          <h1 class="mt-1.5 font-display text-[22px] font-900 leading-tight text-ink">
-            Play <span class="text-brandYellowDark">Solo</span>, <span class="text-brandGreen">Family</span> or <span class="text-brandRed">Friends</span>
-          </h1>
-        </div>
+        <div class="relative flex h-full flex-col px-5 pt-6 pb-6">
+          <header class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl border-[3px] border-ink bg-brandGreen hard-shadow-sm">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.5 9H21.5L15.8 13.2 18 20.2 12 16 6 20.2 8.2 13.2 2.5 9H9.5L12 2Z" fill="#FFC738" stroke="#1A1A1A" stroke-width="1"/></svg>
+              </div>
+              <span class="font-display text-[17px] font-900 tracking-tight text-white drop-shadow">Quiz<span class="text-brandYellow">Express</span></span>
+            </div>
+            <span class="rotate-3 rounded-full border-[2px] border-ink bg-white px-3 py-1 text-[11px] font-700 text-ink hard-shadow-sm">Safaricom VAS</span>
+          </header>
 
-        <!-- Photos: fanned overlapping collage -->
-        <div class="relative mx-auto mt-5 flex h-[210px] max-w-[300px] items-center justify-center">
-          <div class="absolute left-1/2 top-1/2 z-10 w-[112px] -translate-x-[112%] -translate-y-1/2 -rotate-[9deg] transition active:scale-95">
-            <div class="overflow-hidden rounded-2xl border-[3px] border-ink bg-white p-1 hard-shadow">
-              <img src="assets/photos/play-solo.jpg" alt="A woman relaxing on the couch with headphones and a phone" class="aspect-[3/4] w-full rounded-lg object-cover" loading="lazy" />
-            </div>
-          </div>
-          <div class="absolute left-1/2 top-1/2 z-30 w-[132px] -translate-x-1/2 -translate-y-1/2 transition active:scale-95">
-            <div class="overflow-hidden rounded-2xl border-[3px] border-ink bg-white p-1 hard-shadow">
-              <img src="assets/photos/play-family.jpg" alt="A family watching a laptop together on the sofa" class="aspect-[3/4] w-full rounded-lg object-cover" loading="lazy" />
-            </div>
-          </div>
-          <div class="absolute left-1/2 top-1/2 z-10 w-[112px] translate-x-[12%] -translate-y-1/2 rotate-[9deg] transition active:scale-95">
-            <div class="overflow-hidden rounded-2xl border-[3px] border-ink bg-white p-1 hard-shadow">
-              <img src="assets/photos/play-friends.jpg" alt="Friends cheering while watching a football match together" class="aspect-[3/4] w-full rounded-lg object-cover" loading="lazy" />
-            </div>
+          <div class="mt-auto">
+            <p class="text-[10px] font-800 uppercase tracking-[0.28em] text-brandYellow">Family Trivia Pass</p>
+            <h1 class="mt-1.5 font-display text-[26px] font-900 leading-tight text-white drop-shadow-lg">
+              Play <span class="text-brandYellow">Solo</span>, Family or Friends
+            </h1>
           </div>
         </div>
       </div>
