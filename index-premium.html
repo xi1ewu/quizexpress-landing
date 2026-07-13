@@ -109,23 +109,23 @@
         <div class="mt-6 text-center">
           <p class="text-[10px] font-700 uppercase tracking-[0.28em] text-brandYellowDark">Trivia Quiz</p>
           <h1 class="mt-1.5 font-display text-[22px] font-900 leading-tight text-brandGreenDark">
-            Play with family and earn
+            Play <span class="text-brandYellowDark">Solo</span>, <span class="text-brandGreen">Family</span> or <span class="text-brandRed">Friends</span>
           </h1>
         </div>
 
-        <!-- Photos: random scatter -->
-        <div class="relative mx-auto mt-5 h-[240px] w-full max-w-[320px]">
-          <div class="absolute left-[2%] top-[16%] z-20 w-[116px] -rotate-[14deg] transition active:scale-95">
+        <!-- Photos: fanned overlapping collage -->
+        <div class="relative mx-auto mt-5 flex h-[210px] max-w-[300px] items-center justify-center">
+          <div class="absolute left-1/2 top-1/2 z-10 w-[112px] -translate-x-[112%] -translate-y-1/2 -rotate-[9deg] transition active:scale-95">
             <div class="overflow-hidden rounded-[1.25rem] bg-white p-1 shadow-xl ring-1 ring-white/70">
               <img src="assets/photos/play-solo.jpg" alt="A woman relaxing on the couch with headphones and a phone" class="aspect-[3/4] w-full rounded-2xl object-cover" loading="lazy" />
             </div>
           </div>
-          <div class="absolute left-1/2 top-0 z-30 w-[130px] -translate-x-1/2 rotate-[6deg] transition active:scale-95">
+          <div class="absolute left-1/2 top-1/2 z-30 w-[132px] -translate-x-1/2 -translate-y-1/2 transition active:scale-95">
             <div class="overflow-hidden rounded-[1.25rem] bg-white p-1 shadow-2xl ring-1 ring-white/70">
               <img src="assets/photos/play-family.jpg" alt="A family watching a laptop together on the sofa" class="aspect-[3/4] w-full rounded-2xl object-cover" loading="lazy" />
             </div>
           </div>
-          <div class="absolute right-0 top-[24%] z-10 w-[112px] rotate-[12deg] transition active:scale-95">
+          <div class="absolute left-1/2 top-1/2 z-10 w-[112px] translate-x-[12%] -translate-y-1/2 rotate-[9deg] transition active:scale-95">
             <div class="overflow-hidden rounded-[1.25rem] bg-white p-1 shadow-xl ring-1 ring-white/70">
               <img src="assets/photos/play-friends.jpg" alt="Friends cheering while watching a football match together" class="aspect-[3/4] w-full rounded-2xl object-cover" loading="lazy" />
             </div>
@@ -139,7 +139,7 @@
           Join <span class="grad-text">QuizExpress</span> Now!
         </h2>
         <p class="mx-auto mt-2 max-w-[300px] text-[13.5px] leading-relaxed text-brandGreenDark/70">
-          Play anytime and earn daily rewards.
+          Answer fun trivia, play anytime, and earn rewards every day.
         </p>
       </section>
 
@@ -169,15 +169,12 @@
       <section class="mt-8 animate-pop-in [animation-delay:300ms]">
         <div class="glass-strong rounded-t-[2rem] rounded-b-2xl px-5 pb-5 pt-3 shadow-xl shadow-brandGreen/10 ring-1 ring-white/70">
           <div class="mx-auto mb-3 h-1.5 w-10 rounded-full bg-brandGreenDark/20"></div>
-          <p class="text-center text-[13.5px] font-700 text-brandGreenDark">
-            Ksh 10.00 to subscribe and Ksh 10.00/day to renew service.
-          </p>
           <button
             id="cta-btn"
             type="button"
-            class="group mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brandGreen to-brandGreenLight py-4 text-[17px] font-800 text-white transition active:scale-[0.97] animate-glow"
+            class="group mt-1 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brandGreen to-brandGreenLight py-4 text-[17px] font-800 text-white transition active:scale-[0.97] animate-glow"
           >
-            Get Started
+            Join Now
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition group-active:translate-x-0.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
           <p id="redirect-note" class="mt-2 hidden text-center text-[12px] font-600 text-brandGreenDark/70">Redirecting you to confirm your subscription…</p>
