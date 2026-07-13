@@ -16,11 +16,10 @@
       extend: {
         colors: {
           cream: '#FBF2DE',
+          ink: '#1A1A1A',
           brandGreen: '#0B7A3E',
           brandGreenDark: '#075C2E',
-          brandGreenLight: '#3FAE63',
           brandYellow: '#FFC738',
-          brandYellowDark: '#F0A500',
           brandRed: '#E8483C',
         },
         fontFamily: {
@@ -35,25 +34,20 @@
             '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
             '50%': { transform: 'translate(-8px, 8px) rotate(-5deg)' },
           },
-          spinSlow: {
-            '0%': { transform: 'rotate(0deg)' },
-            '100%': { transform: 'rotate(360deg)' },
-          },
-          glow: {
-            '0%, 100%': { boxShadow: '0 0 0 0 rgba(11,122,62,0.45), 0 12px 30px rgba(11,122,62,0.28)' },
-            '50%': { boxShadow: '0 0 0 16px rgba(11,122,62,0), 0 12px 30px rgba(11,122,62,0.28)' },
+          pressPulse: {
+            '0%, 100%': { transform: 'translate(0, 0)', boxShadow: '4px 4px 0 0 #075C2E' },
+            '50%': { transform: 'translate(2px, 2px)', boxShadow: '2px 2px 0 0 #075C2E' },
           },
           popIn: {
-            '0%': { opacity: '0', transform: 'translateY(14px) scale(0.96)' },
+            '0%': { opacity: '0', transform: 'translateY(10px) scale(0.94)' },
             '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
           },
         },
         animation: {
           'float-slow': 'floatSlow 7s ease-in-out infinite',
           'float-slower': 'floatSlower 9s ease-in-out infinite',
-          'spin-slow': 'spinSlow 22s linear infinite',
-          'glow': 'glow 2.6s ease-in-out infinite',
-          'pop-in': 'popIn 0.55s cubic-bezier(.2,.7,.3,1) both',
+          'press-pulse': 'pressPulse 1.6s ease-in-out infinite',
+          'pop-in': 'popIn 0.45s ease-out both',
         },
       },
     },
@@ -63,18 +57,12 @@
   html, body { overflow-x: hidden; }
   body { font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif; }
   .safe-bottom { padding-bottom: max(1.25rem, env(safe-area-inset-bottom)); }
-  .glass { background: rgba(255,255,255,0.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-  .glass-strong { background: rgba(255,255,255,0.72); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
-  .glass-dark { background: rgba(255,255,255,0.12); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-  .grad-text {
-    background: linear-gradient(90deg, #0B7A3E, #3FAE63 45%, #F0A500);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .hard-shadow { box-shadow: 5px 5px 0 0 #1A1A1A; }
+  .hard-shadow-sm { box-shadow: 3px 3px 0 0 #1A1A1A; }
+  .ticket-notch { background: #FBF2DE; }
 </style>
 </head>
-<body class="bg-cream text-brandGreenDark antialiased">
+<body class="bg-cream text-ink antialiased">
 
   <div class="relative min-h-screen w-full overflow-hidden">
 
@@ -98,17 +86,17 @@
       <div class="relative pt-6 pb-2 animate-pop-in">
         <header class="relative flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-brandGreen to-brandGreenDark shadow-lg shadow-brandGreen/30">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.5 9H21.5L15.8 13.2 18 20.2 12 16 6 20.2 8.2 13.2 2.5 9H9.5L12 2Z" fill="#FFC738"/></svg>
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl border-[3px] border-ink bg-brandGreen hard-shadow-sm">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 14.5 9H21.5L15.8 13.2 18 20.2 12 16 6 20.2 8.2 13.2 2.5 9H9.5L12 2Z" fill="#FFC738" stroke="#1A1A1A" stroke-width="1"/></svg>
             </div>
-            <span class="font-display text-[17px] font-800 tracking-tight text-brandGreenDark">Quiz<span class="grad-text font-900">Express</span></span>
+            <span class="font-display text-[17px] font-900 tracking-tight text-ink">Quiz<span class="text-brandGreen">Express</span></span>
           </div>
-          <span class="rounded-full bg-brandGreenDark/5 px-3 py-1.5 text-[11px] font-600 text-brandGreenDark/70 ring-1 ring-brandGreenDark/10">Safaricom VAS</span>
+          <span class="rotate-3 rounded-full border-[2px] border-ink bg-white px-3 py-1 text-[11px] font-700 text-ink hard-shadow-sm">Safaricom VAS</span>
         </header>
 
         <div class="mt-6 text-center">
-          <p class="text-[10px] font-700 uppercase tracking-[0.28em] text-brandYellowDark">Trivia Quiz</p>
-          <h1 class="mt-1.5 font-display text-[22px] font-900 leading-tight text-brandGreenDark">
+          <p class="text-[10px] font-800 uppercase tracking-[0.28em] text-brandGreen">Family Trivia Pass</p>
+          <h1 class="mt-1.5 font-display text-[22px] font-900 leading-tight text-ink">
             Play <span class="text-brandYellowDark">Solo</span>, <span class="text-brandGreen">Family</span> or <span class="text-brandRed">Friends</span>
           </h1>
         </div>
@@ -116,78 +104,87 @@
         <!-- Photos: fanned overlapping collage -->
         <div class="relative mx-auto mt-5 flex h-[210px] max-w-[300px] items-center justify-center">
           <div class="absolute left-1/2 top-1/2 z-10 w-[112px] -translate-x-[112%] -translate-y-1/2 -rotate-[9deg] transition active:scale-95">
-            <div class="overflow-hidden rounded-[1.25rem] bg-white p-1 shadow-xl ring-1 ring-white/70">
-              <img src="assets/photos/play-solo.jpg" alt="A woman relaxing on the couch with headphones and a phone" class="aspect-[3/4] w-full rounded-2xl object-cover" loading="lazy" />
+            <div class="overflow-hidden rounded-2xl border-[3px] border-ink bg-white p-1 hard-shadow">
+              <img src="assets/photos/play-solo.jpg" alt="A woman relaxing on the couch with headphones and a phone" class="aspect-[3/4] w-full rounded-lg object-cover" loading="lazy" />
             </div>
           </div>
           <div class="absolute left-1/2 top-1/2 z-30 w-[132px] -translate-x-1/2 -translate-y-1/2 transition active:scale-95">
-            <div class="overflow-hidden rounded-[1.25rem] bg-white p-1 shadow-2xl ring-1 ring-white/70">
-              <img src="assets/photos/play-family.jpg" alt="A family watching a laptop together on the sofa" class="aspect-[3/4] w-full rounded-2xl object-cover" loading="lazy" />
+            <div class="overflow-hidden rounded-2xl border-[3px] border-ink bg-white p-1 hard-shadow">
+              <img src="assets/photos/play-family.jpg" alt="A family watching a laptop together on the sofa" class="aspect-[3/4] w-full rounded-lg object-cover" loading="lazy" />
             </div>
           </div>
           <div class="absolute left-1/2 top-1/2 z-10 w-[112px] translate-x-[12%] -translate-y-1/2 rotate-[9deg] transition active:scale-95">
-            <div class="overflow-hidden rounded-[1.25rem] bg-white p-1 shadow-xl ring-1 ring-white/70">
-              <img src="assets/photos/play-friends.jpg" alt="Friends cheering while watching a football match together" class="aspect-[3/4] w-full rounded-2xl object-cover" loading="lazy" />
+            <div class="overflow-hidden rounded-2xl border-[3px] border-ink bg-white p-1 hard-shadow">
+              <img src="assets/photos/play-friends.jpg" alt="Friends cheering while watching a football match together" class="aspect-[3/4] w-full rounded-lg object-cover" loading="lazy" />
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Ticket tear-off strip -->
+      <div class="relative -mx-5 mt-4 flex items-center bg-cream px-5">
+        <span class="ticket-notch absolute left-2 -top-2 h-4 w-4 rounded-full border-[3px] border-ink"></span>
+        <div class="mx-6 flex-1 border-t-[3px] border-dashed border-ink/25"></div>
+        <span class="ticket-notch absolute right-2 -top-2 h-4 w-4 rounded-full border-[3px] border-ink"></span>
+      </div>
+
       <!-- Headline + value proposition -->
-      <section class="mt-6 text-center animate-pop-in [animation-delay:180ms]">
-        <h2 class="font-display text-[23px] font-900 leading-tight text-brandGreenDark">
-          Join <span class="grad-text">QuizExpress</span> Now!
-        </h2>
-        <p class="mx-auto mt-2 max-w-[300px] text-[13.5px] leading-relaxed text-brandGreenDark/70">
-          Answer fun trivia, play anytime, and earn rewards every day.
+      <section class="mt-7 text-center animate-pop-in [animation-delay:160ms]">
+        <h1 class="font-display text-[30px] font-900 leading-[1.05] text-ink">
+          Join QuizExpress<br/>
+          <span class="relative inline-block text-brandGreen">
+            Now!
+            <svg class="absolute -bottom-1.5 left-0 w-full" height="8" viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 5.5C20 1 40 8 60 4.5S100 0 118 4" stroke="#FFC738" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+          </span>
+        </h1>
+        <p class="mx-auto mt-4 max-w-[300px] text-[14.5px] font-600 leading-relaxed text-ink/70">
+          Your ultimate trivia hub. Play solo or challenge your family and friends, answer fun trivia, and earn rewards every day!
         </p>
       </section>
 
-      <!-- Feature chips: horizontal swipeable row, not a grid -->
-      <section class="mt-6 -mx-5 animate-pop-in [animation-delay:240ms]">
-        <div class="no-scrollbar flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-5 pb-1">
-          <div class="glass flex shrink-0 snap-start items-center gap-2 rounded-full px-4 py-2.5 shadow-sm ring-1 ring-white/60">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
-            <span class="text-[12.5px] font-600 text-brandGreenDark whitespace-nowrap">Solo Play</span>
-          </div>
-          <div class="glass flex shrink-0 snap-start items-center gap-2 rounded-full px-4 py-2.5 shadow-sm ring-1 ring-white/60">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2.5 20c0-3.4 2.6-5.3 5.5-5.3s5.5 1.9 5.5 5.3"/><path d="M14.5 20c.2-2.6 1.9-4.3 4-4.3 2 0 3.6 1.4 4 3.6"/></svg>
-            <span class="text-[12.5px] font-600 text-brandGreenDark whitespace-nowrap">Group Play</span>
-          </div>
-          <div class="glass flex shrink-0 snap-start items-center gap-2 rounded-full px-4 py-2.5 shadow-sm ring-1 ring-white/60">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-            <span class="text-[12.5px] font-600 text-brandGreenDark whitespace-nowrap">Fresh Daily</span>
-          </div>
-          <div class="glass flex shrink-0 snap-start items-center gap-2 rounded-full px-4 py-2.5 shadow-sm ring-1 ring-white/60">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 14.5 9H21.5L15.8 13.2 18 20.2 12 16 6 20.2 8.2 13.2 2.5 9H9.5L12 2Z"/></svg>
-            <span class="text-[12.5px] font-600 text-brandGreenDark whitespace-nowrap">Earn Rewards</span>
-          </div>
+      <!-- Feature checklist (vertical, not a grid) -->
+      <section class="mt-6 space-y-2.5 animate-pop-in [animation-delay:220ms]">
+        <div class="flex items-center gap-3 rounded-2xl border-[2px] border-ink bg-white px-4 py-2.5 hard-shadow-sm">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-[2px] border-ink bg-brandGreen text-white">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <span class="text-[13.5px] font-700 text-ink">Play Solo or challenge friends in Group mode</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-2xl border-[2px] border-ink bg-white px-4 py-2.5 hard-shadow-sm">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-[2px] border-ink bg-brandRed text-white">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <span class="text-[13.5px] font-700 text-ink">Fresh questions dropped every single day</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-2xl border-[2px] border-ink bg-white px-4 py-2.5 hard-shadow-sm">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-[2px] border-ink bg-brandYellow text-ink">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <span class="text-[13.5px] font-700 text-ink">Earn real rewards as you play</span>
         </div>
       </section>
 
-      <!-- Combined pricing + CTA "sheet" -->
-      <section class="mt-8 animate-pop-in [animation-delay:300ms]">
-        <div class="glass-strong rounded-t-[2rem] rounded-b-2xl px-5 pb-5 pt-3 shadow-xl shadow-brandGreen/10 ring-1 ring-white/70">
-          <div class="mx-auto mb-3 h-1.5 w-10 rounded-full bg-brandGreenDark/20"></div>
-          <button
-            id="cta-btn"
-            type="button"
-            class="group mt-1 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brandGreen to-brandGreenLight py-4 text-[17px] font-800 text-white transition active:scale-[0.97] animate-glow"
-          >
-            Join Now
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition group-active:translate-x-0.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-          <p id="redirect-note" class="mt-2 hidden text-center text-[12px] font-600 text-brandGreenDark/70">Redirecting you to confirm your subscription…</p>
-        </div>
+      <!-- CTA -->
+      <section class="mt-7 animate-pop-in [animation-delay:340ms]">
+        <button
+          id="cta-btn"
+          type="button"
+          class="group flex w-full items-center justify-center gap-2 rounded-full border-[3px] border-ink bg-brandGreen py-4 text-[17px] font-800 text-white transition active:translate-x-[3px] active:translate-y-[3px] active:shadow-none animate-press-pulse"
+        >
+          Join Now
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="transition group-active:translate-x-0.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p id="redirect-note" class="mt-2 hidden text-center text-[12px] font-700 text-ink/70">Redirecting you to confirm your subscription…</p>
       </section>
 
       <!-- Footer / legal -->
-      <footer class="safe-bottom mt-auto pt-6 pb-4 text-center">
-        <p class="text-[11.5px] leading-relaxed text-brandGreenDark/55">
+      <footer class="safe-bottom mt-auto pt-8 pb-4 text-center">
+        <div class="mx-auto h-[2px] w-16 bg-ink/15"></div>
+        <p class="mt-4 text-[11.5px] font-600 leading-relaxed text-ink/60">
           Ksh 10.00 to subscribe and Ksh 10.00/day to renew service. Available on the Safaricom network.
-          Cancel anytime by sending <span class="font-700 text-brandGreenDark/75">'STOP QUIZ'</span> to <span class="font-700 text-brandGreenDark/75">27301</span>.
+          Cancel anytime by sending <span class="font-800 text-ink/80">'STOP QUIZ'</span> to <span class="font-800 text-ink/80">27301</span>.
         </p>
-        <p class="mt-2 text-[11px] text-brandGreenDark/35">© 2026 QuizExpress. All rights reserved.</p>
+        <p class="mt-2 text-[11px] text-ink/40">© 2026 QuizExpress. All rights reserved.</p>
       </footer>
 
     </main>
